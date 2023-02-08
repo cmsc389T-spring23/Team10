@@ -3,6 +3,7 @@
 
 Responsibilities on who does what
 | Person      | PacMan Class | Ghost Class | Map Class | Reviewer Class |
+| ----------- | ----------- | ----------- | ----------- |
 | Keshav      | get_valid_moves       | get_valid_moves       | move       | Keith       |
 | Keith   | consume        | attack       | Title       | eatCookie       | Jason
 | Jason      | move       | ghost_move       | Title       | getLoc       | Brian
