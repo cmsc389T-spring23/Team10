@@ -2,7 +2,8 @@
 
 
 Responsibilities on who does what
-| Syntax      | Description |
-| ----------- | ----------- |
-| Header      | Title       |
-| Paragraph   | Text        |
+| Person      | PacMan Class | Ghost Class | Map Class | Reviewer Class |
+| Keshav      | get_valid_moves       | get_valid_moves       | move       | Keith       |
+| Keith   | consume        | attack       | Title       | eatCookie       | Jason
+| Jason      | move       | ghost_move       | Title       | getLoc       | Brian
+| Brian   | is_ghost_in_range        | is_pacman_in_range       | attack       | Keshav       |
