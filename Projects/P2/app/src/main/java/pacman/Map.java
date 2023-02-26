@@ -53,8 +53,30 @@ public class Map {
   }
 
   public boolean move(String name, Location loc, Type type) {
-    // update locations, components, and field
-    // use the setLocation method for the component to move it to the new location
+    // Update field locations and jcomponent
+    if (name.equals("pacman") && PacMan.valid_move(loc)){
+      HashSet<Type>  old = new HashSet<>();
+      old.(Map.EMPTY);
+      Location old_loc = locations.get(name);
+      HashSet<Type>  new_set = new HashSet<>();
+      new_set.(Map.PACMAN);
+      locations.put(name, loc);
+      field.put(old_loc, old);
+      field.put(loc, new_set);
+      components.get(name).setLocation(loc.x, loc.y);
+      return true;
+    }else if ((name.equals("inky") || name.equals("blinky") || name.equals("pinky") || name.equals("clyde")) && Ghost.valid_move(loc)){
+      HashSet<Type>  old = new HashSet<>();
+      old.(Map.EMPTY);
+      Location old_loc = locations.get(name);
+      HashSet<Type>  new_set = new HashSet<>();
+      new_set.(Map.GHOST);
+      locations.put(name, loc);
+      field.put(old_loc, old);
+      field.put(loc, new_set);
+      components.get(name).setLocation(loc.x, loc.y);
+      return true;
+    }
     return false;
   }
 
