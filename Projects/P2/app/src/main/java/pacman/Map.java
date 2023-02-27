@@ -64,7 +64,58 @@ public class Map {
   }
 
   public boolean attack(String Name) {
-    // update gameOver
+    Location curr = locations.get(Name);
+    int x = curr.x;
+    int y = curr.y;
+
+    HashSet<Type> around = getLoc(new Location(x+1,y));
+    if(around.contains(Map.Type.PACMAN)) {
+      gameOver = true;
+      return true;
+    }
+
+    around = getLoc(new Location(x-1,y));
+     if(around.contains(Map.Type.PACMAN)) {
+      gameOver = true;
+      return true;
+    }
+
+    around = getLoc(new Location(x,y+1));
+     if(around.contains(Map.Type.PACMAN)) {
+      gameOver = true;
+      return true;
+    }
+
+    around = getLoc(new Location(x,y-1));
+     if(around.contains(Map.Type.PACMAN)) {
+      gameOver = true;
+      return true;
+    }
+
+    around = getLoc(new Location(x+1,y+1));
+     if(around.contains(Map.Type.PACMAN)) {
+      gameOver = true;
+      return true;
+    }
+
+    around = getLoc(new Location(x+1,y-1));
+     if(around.contains(Map.Type.PACMAN)) {
+      gameOver = true;
+      return true;
+    }
+
+    around = getLoc(new Location(x-1,y+1));
+     if(around.contains(Map.Type.PACMAN)) {
+      gameOver = true;
+      return true;
+    }
+
+    around = getLoc(new Location(x-1,y-1));
+     if(around.contains(Map.Type.PACMAN)) {
+      gameOver = true;
+      return true;
+    }
+
     return false;
   }
 
