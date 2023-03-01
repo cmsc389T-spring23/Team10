@@ -162,11 +162,17 @@ public class Map {
     // the id for a cookie at (10, 1) is tok_x10_y1
     Location loc = locations.get(name); // Gets location of pacman
 
-    if (field.get(loc).contains(Type.COOKIE)) { // Sees if location has a cookie
-      cookies++; // Updates cookes
-      String id = "tok_x" + Integer.toString(loc.x) + "_y" + Integer.toString(loc.y);
-      field.get(loc).remove(Type.COOKIE); // Removes from field
-      return components.remove(id); // Removes from components
+    if (field.get(loc).contains(Map.Type.COOKIE)) { // Sees if location has a cookie
+      cookies += 1; // Updates cookes
+      System.out.println(cookies);
+      String id = "tok_x" + loc.x + "_y" + loc.y;
+
+      field.get(loc).remove(Map.Type.COOKIE); // Removes from field
+      locations.remove(id);
+      components.get(id).setVisible(false);
+      JComponent output = components.get(id);
+      components.remove(id);// Removes from components
+      return output; 
     } else {
       return null; // No cookie found
     }

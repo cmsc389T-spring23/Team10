@@ -14,7 +14,6 @@ public class TestMapEatCookie extends TestCase {
 
     assert frame.getMap().eatCookie("pacman") != null;
     assert frame.getMap().eatCookie("pacman") == null;
-    return;
 
   }
 }
