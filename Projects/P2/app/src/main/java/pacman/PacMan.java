@@ -20,7 +20,21 @@ public class PacMan {
   }
 
   public boolean move() {
-    return false;
+    ArrayList<Location> moves = get_valid_moves();
+    if (moves.size() == 0) {
+      return false;
+    }
+
+    // Generating random 3 digit number between 0 and 0.999
+    String timeString = String.valueOf(System.currentTimeMillis());
+    double rand = (timeString.substring(timeString.length() - 3).parseDouble()) / 1000.0;
+    int locNum = (int) (rand * moves.size());
+
+    // Moving pacman
+    myLoc = moves.get(locNum);
+    myMap.move(myName, myLoc, Map.Type.PACMAN);
+
+    return true;
   }
 
   public boolean is_ghost_in_range() {
