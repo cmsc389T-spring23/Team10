@@ -87,9 +87,10 @@ public class Map {
     if (thingsAtLoc == null) {
       return result;
     }
-    if (thingsAtLoc == emptySet) {
+
+    if (thingsAtLoc.contains(Type.EMPTY)) {
       result.add(Type.EMPTY);
-    } else if (thingsAtLoc == wallSet) {
+    } else if (thingsAtLoc.contains(Type.WALL)) {
       result.add(Type.WALL);
     } else {
       for (Type thing : thingsAtLoc) {
