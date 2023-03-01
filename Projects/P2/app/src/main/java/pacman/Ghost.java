@@ -18,7 +18,7 @@ public class Ghost {
     int x = loc.x;
     int y = loc.y;
     HashSet<Map.Type> moves = this.myMap.getLoc(new Location(x,y));
-    if(moves.contains(Map.Type.WALL)) {
+    if(moves != null && moves.contains(Map.Type.WALL)) {
       return false;
     }
     return true;
@@ -37,16 +37,14 @@ public class Ghost {
     return_val.add(new Location(x+1, y));
     return_val.add(new Location(x-1, y));
     int i = 0;
-    ArrayList<Location> return_val2 = new ArrayList();
-    return_val2.addAll(return_val);
-    for (Location loc: return_val){
-      if (valid_move(loc) == true) {
-        i++;
-      }else{
-        return_val2.remove(i);
-      }
+    ArrayList<Location> valid_moves = new ArrayList();
+    for (Location move : return_val) {
+        if (valid_move(move)) {
+            valid_moves.add(move);
+        }
     }
-    return return_val;
+
+    return valid_moves;
   }
 
 
@@ -72,48 +70,50 @@ public class Ghost {
 
     //Right
     HashSet<Map.Type> moves = myMap.getLoc(new Location(x+1,y));
-    if(moves.contains(Map.Type.PACMAN)) {
-      return true;
-    }
-
-
-    //Up
-    moves = myMap.getLoc(new Location(x,y+1));
-    if(moves.contains(Map.Type.PACMAN)) {
-      return true;
-    }
-
-    //Down
-    moves = myMap.getLoc(new Location(x,y-1));
-    if(moves.contains(Map.Type.PACMAN)) {
-      return true;
-    }
-
-    //Left
-    moves = myMap.getLoc(new Location(x-1,y));
-    if(moves.contains(Map.Type.PACMAN)) {
-      return true;
-    }
-
-  // Diagonals
-    moves = myMap.getLoc(new Location(x+1,y+1));
-    if(moves.contains(Map.Type.PACMAN)) {
-      return true;
-    }
-
-    moves = myMap.getLoc(new Location(x-1,y+1));
-    if(moves.contains(Map.Type.PACMAN)) {
-      return true;
-    }
-
-    moves = myMap.getLoc(new Location(x+1,y-1));
-    if(moves.contains(Map.Type.PACMAN)) {
-      return true;
-    }
-
-    moves = myMap.getLoc(new Location(x-1,y-1));
-    if(moves.contains(Map.Type.PACMAN)) {
-      return true;
+    if (moves != null){
+      if(moves.contains(Map.Type.PACMAN)) {
+        return true;
+      }
+  
+  
+      //Up
+      moves = myMap.getLoc(new Location(x,y+1));
+      if(moves.contains(Map.Type.PACMAN)) {
+        return true;
+      }
+  
+      //Down
+      moves = myMap.getLoc(new Location(x,y-1));
+      if(moves.contains(Map.Type.PACMAN)) {
+        return true;
+      }
+  
+      //Left
+      moves = myMap.getLoc(new Location(x-1,y));
+      if(moves.contains(Map.Type.PACMAN)) {
+        return true;
+      }
+  
+    // Diagonals
+      moves = myMap.getLoc(new Location(x+1,y+1));
+      if(moves.contains(Map.Type.PACMAN)) {
+        return true;
+      }
+  
+      moves = myMap.getLoc(new Location(x-1,y+1));
+      if(moves.contains(Map.Type.PACMAN)) {
+        return true;
+      }
+  
+      moves = myMap.getLoc(new Location(x+1,y-1));
+      if(moves.contains(Map.Type.PACMAN)) {
+        return true;
+      }
+  
+      moves = myMap.getLoc(new Location(x-1,y-1));
+      if(moves.contains(Map.Type.PACMAN)) {
+        return true;
+      }
     }
 
     return false;

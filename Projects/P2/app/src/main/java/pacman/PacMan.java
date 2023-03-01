@@ -39,16 +39,14 @@ public class PacMan {
     return_val.add(new Location(x+1, y));
     return_val.add(new Location(x-1, y));
     int i = 0;
-    ArrayList<Location> return_val2 = new ArrayList();
-    return_val2.addAll(return_val);
-    for (Location loc: return_val){
-      if (valid_move(loc) == true) {
-        i++;
-      }else{
-        return_val2.remove(i);
-      }
+    ArrayList<Location> valid_moves = new ArrayList();
+    for (Location move : return_val) {
+        if (valid_move(move)) {
+            valid_moves.add(move);
+        }
     }
-    return return_val;
+
+    return valid_moves;
   }
 
 
@@ -74,50 +72,51 @@ public class PacMan {
 
     //Right
     HashSet<Map.Type> moves = myMap.getLoc(new Location(x+1,y));
-    if(moves.contains(Map.Type.GHOST)) {
-      return true;
+    if (moves != null){
+      if(moves.contains(Map.Type.GHOST)) {
+        return true;
+      }
+  
+  
+      //Up
+      moves = myMap.getLoc(new Location(x,y+1));
+      if(moves.contains(Map.Type.GHOST)) {
+        return true;
+      }
+  
+      //Down
+      moves = myMap.getLoc(new Location(x,y-1));
+      if(moves.contains(Map.Type.GHOST)) {
+        return true;
+      }
+  
+      //Left
+      moves = myMap.getLoc(new Location(x-1,y));
+      if(moves.contains(Map.Type.GHOST)) {
+        return true;
+      }
+  
+    // Diagonals
+      moves = myMap.getLoc(new Location(x+1,y+1));
+      if(moves.contains(Map.Type.GHOST)) {
+        return true;
+      }
+  
+      moves = myMap.getLoc(new Location(x-1,y+1));
+      if(moves.contains(Map.Type.GHOST)) {
+        return true;
+      }
+  
+      moves = myMap.getLoc(new Location(x+1,y-1));
+      if(moves.contains(Map.Type.GHOST)) {
+        return true;
+      }
+  
+      moves = myMap.getLoc(new Location(x-1,y-1));
+      if(moves.contains(Map.Type.GHOST)) {
+        return true;
+      }
     }
-
-
-    //Up
-    moves = myMap.getLoc(new Location(x,y+1));
-    if(moves.contains(Map.Type.GHOST)) {
-      return true;
-    }
-
-    //Down
-    moves = myMap.getLoc(new Location(x,y-1));
-    if(moves.contains(Map.Type.GHOST)) {
-      return true;
-    }
-
-    //Left
-    moves = myMap.getLoc(new Location(x-1,y));
-    if(moves.contains(Map.Type.GHOST)) {
-      return true;
-    }
-
-  // Diagonals
-    moves = myMap.getLoc(new Location(x+1,y+1));
-    if(moves.contains(Map.Type.GHOST)) {
-      return true;
-    }
-
-    moves = myMap.getLoc(new Location(x-1,y+1));
-    if(moves.contains(Map.Type.GHOST)) {
-      return true;
-    }
-
-    moves = myMap.getLoc(new Location(x+1,y-1));
-    if(moves.contains(Map.Type.GHOST)) {
-      return true;
-    }
-
-    moves = myMap.getLoc(new Location(x-1,y-1));
-    if(moves.contains(Map.Type.GHOST)) {
-      return true;
-    }
-
     return false;
   }
 
