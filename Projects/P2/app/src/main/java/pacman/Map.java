@@ -84,6 +84,9 @@ public class Map {
     HashSet<Type> thingsAtLoc = field.get(loc);
     HashSet<Type> result = new HashSet<Type>();
 
+    if (thingsAtLoc == null) {
+      return result;
+    }
     if (thingsAtLoc == emptySet) {
       result.add(Type.EMPTY);
     } else if (thingsAtLoc == wallSet) {
