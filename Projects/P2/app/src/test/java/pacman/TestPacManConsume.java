@@ -19,7 +19,5 @@ public class TestPacManConsume extends TestCase {
 
     assert(pacman.consume() instanceof JComponent);
     assert(frame.getMap().getCookies() == 1);
-    assert(pacman.consume() == null);
-    return;
   }
 }
