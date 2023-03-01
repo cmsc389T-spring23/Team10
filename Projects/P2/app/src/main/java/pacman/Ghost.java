@@ -1,6 +1,7 @@
 package pacman;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.lang.Math;
 
 public class Ghost {
   String myName;
@@ -13,19 +14,114 @@ public class Ghost {
     this.myMap = map;
   }
 
-  public ArrayList<Location> get_valid_moves() {
-    return null;
+  public boolean valid_move(Location loc){
+    int x = loc.x;
+    int y = loc.y;
+    HashSet<Map.Type> moves = this.myMap.getLoc(new Location(x,y));
+    if(moves.contains(Map.Type.WALL)) {
+      return false;
+    }
+    return true;
   }
 
+  public ArrayList<Location> get_valid_moves() {
+    int x = this.myLoc.x;
+    int y = this.myLoc.y;
+    ArrayList<Location> return_val = new ArrayList();
+    return_val.add(new Location(x, y+1));
+    return_val.add(new Location(x+1, y+1));
+    return_val.add(new Location(x-1, y+1));
+    return_val.add(new Location(x+1, y-1));
+    return_val.add(new Location(x-1, y-1));
+    return_val.add(new Location(x, y-1));
+    return_val.add(new Location(x+1, y));
+    return_val.add(new Location(x-1, y));
+    int i = 0;
+    ArrayList<Location> return_val2 = new ArrayList();
+    return_val2.addAll(return_val);
+    for (Location loc: return_val){
+      if (valid_move(loc) == true) {
+        i++;
+      }else{
+        return_val2.remove(i);
+      }
+    }
+    return return_val;
+  }
+
+
   public boolean move() {
-    return false;
+    ArrayList<Location> moves = get_valid_moves();
+    if (moves.size() == 0) {
+      return false;
+    }
+
+    // Generating random location
+    int locNum = (int) (Math.random() * moves.size());
+
+    // Moving ghost
+    myLoc = moves.get(locNum);
+    myMap.move(myName, myLoc, Map.Type.GHOST);
+
+    return true;
   }
 
   public boolean is_pacman_in_range() {
+    int x = myLoc.x;
+    int y = myLoc.y;
+
+    //Right
+    HashSet<Map.Type> moves = myMap.getLoc(new Location(x+1,y));
+    if(moves.contains(Map.Type.PACMAN)) {
+      return true;
+    }
+
+
+    //Up
+    moves = myMap.getLoc(new Location(x,y+1));
+    if(moves.contains(Map.Type.PACMAN)) {
+      return true;
+    }
+
+    //Down
+    moves = myMap.getLoc(new Location(x,y-1));
+    if(moves.contains(Map.Type.PACMAN)) {
+      return true;
+    }
+
+    //Left
+    moves = myMap.getLoc(new Location(x-1,y));
+    if(moves.contains(Map.Type.PACMAN)) {
+      return true;
+    }
+
+  // Diagonals
+    moves = myMap.getLoc(new Location(x+1,y+1));
+    if(moves.contains(Map.Type.PACMAN)) {
+      return true;
+    }
+
+    moves = myMap.getLoc(new Location(x-1,y+1));
+    if(moves.contains(Map.Type.PACMAN)) {
+      return true;
+    }
+
+    moves = myMap.getLoc(new Location(x+1,y-1));
+    if(moves.contains(Map.Type.PACMAN)) {
+      return true;
+    }
+
+    moves = myMap.getLoc(new Location(x-1,y-1));
+    if(moves.contains(Map.Type.PACMAN)) {
+      return true;
+    }
+
     return false;
   }
 
   public boolean attack() {
-    return false;
+    if(is_pacman_in_range()) 
+      return myMap.attack(myName);
+    else return false;
   }
 }
