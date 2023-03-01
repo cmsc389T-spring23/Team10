@@ -54,23 +54,23 @@ public class Map {
 
   public boolean move(String name, Location loc, Type type) {
     // Update field locations and jcomponent
-    if (name.equals("pacman") && PacMan.valid_move(loc)){
+    if (name.equals("pacman")){
       HashSet<Type>  old = new HashSet<>();
-      old.(Map.EMPTY);
+      old.add(Type.EMPTY);
       Location old_loc = locations.get(name);
       HashSet<Type>  new_set = new HashSet<>();
-      new_set.(Map.PACMAN);
+      new_set.add(Type.PACMAN);
       locations.put(name, loc);
       field.put(old_loc, old);
       field.put(loc, new_set);
       components.get(name).setLocation(loc.x, loc.y);
       return true;
-    }else if ((name.equals("inky") || name.equals("blinky") || name.equals("pinky") || name.equals("clyde")) && Ghost.valid_move(loc)){
+    }else if ((name.equals("inky") || name.equals("blinky") || name.equals("pinky") || name.equals("clyde"))){
       HashSet<Type>  old = new HashSet<>();
-      old.(Map.EMPTY);
+      old.add(Type.EMPTY);
       Location old_loc = locations.get(name);
       HashSet<Type>  new_set = new HashSet<>();
-      new_set.(Map.GHOST);
+      new_set.add(Type.GHOST);
       locations.put(name, loc);
       field.put(old_loc, old);
       field.put(loc, new_set);
@@ -84,7 +84,7 @@ public class Map {
     HashSet<Type> thingsAtLoc = field.get(loc);
     HashSet<Type> result = new HashSet<Type>();
 
-    if (things == emptySet) {
+    if (thingsAtLoc == emptySet) {
       result.add(Type.EMPTY);
     } else if (thingsAtLoc == wallSet) {
       result.add(Type.WALL);

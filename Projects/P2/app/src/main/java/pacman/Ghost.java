@@ -1,6 +1,7 @@
 package pacman;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.lang.Math;
 
 public class Ghost {
   String myName;
@@ -16,7 +17,7 @@ public class Ghost {
   public boolean valid_move(Location loc){
     int x = loc.x;
     int y = loc.y;
-    HashSet<Type> moves = this.myMap.getLoc(new Location(x,y));
+    HashSet<Map.Type> moves = this.myMap.getLoc(new Location(x,y));
     if(moves.contains(Map.Type.WALL)) {
       return false;
     }
@@ -36,11 +37,13 @@ public class Ghost {
     return_val.add(new Location(x+1, y));
     return_val.add(new Location(x-1, y));
     int i = 0;
+    ArrayList<Location> return_val2 = new ArrayList();
+    return_val2.addAll(return_val);
     for (Location loc: return_val){
       if (valid_move(loc) == true) {
         i++;
       }else{
-        return_val.remove(i);
+        return_val2.remove(i);
       }
     }
     return return_val;
@@ -55,8 +58,7 @@ public class Ghost {
 
     // Generating random 3 digit number between 0 and 0.999
     String timeString = String.valueOf(System.currentTimeMillis());
-    double rand = (timeString.substring(timeString.length() - 3).parseDouble()) / 1000.0;
-    int locNum = (int) (rand * moves.size());
+    int locNum = (int) (Math.random() * moves.size());
 
     // Moving ghost
     myLoc = moves.get(locNum);
@@ -70,7 +72,7 @@ public class Ghost {
     int y = myLoc.y;
 
     //Right
-    HashSet<Type> moves = myMap.getLoc(new Location(x+1,y));
+    HashSet<Map.Type> moves = myMap.getLoc(new Location(x+1,y));
     if(moves.contains(Map.Type.PACMAN)) {
       return true;
     }
