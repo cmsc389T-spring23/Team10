@@ -56,8 +56,7 @@ public class Ghost {
       return false;
     }
 
-    // Generating random 3 digit number between 0 and 0.999
-    String timeString = String.valueOf(System.currentTimeMillis());
+    // Generating random location
     int locNum = (int) (Math.random() * moves.size());
 
     // Moving ghost

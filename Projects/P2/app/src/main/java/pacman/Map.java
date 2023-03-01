@@ -65,7 +65,7 @@ public class Map {
       field.put(loc, new_set);
       components.get(name).setLocation(loc.x, loc.y);
       return true;
-    }else if ((name.equals("inky") || name.equals("blinky") || name.equals("pinky") || name.equals("clyde"))){
+    }else if ((name.equals("Inky") || name.equals("Blinky") || name.equals("Pinky") || name.equals("Clyde"))){
       HashSet<Type>  old = new HashSet<>();
       old.add(Type.EMPTY);
       Location old_loc = locations.get(name);
