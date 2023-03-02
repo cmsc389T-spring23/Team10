@@ -22,6 +22,10 @@ We go through all of the potential moves that Ghost can go to. We then check if 
 #### <b>Map.move()</b>
 For map.move we make sure first that it is either Pacman or a Ghost, because those are the only two things that can move. From there, we update the references of the previous spot to be empty, and the new spot to be filled. We update the field, locations, and components instance variables.
 
+#### Testing Description
+My tests are not the most robust, but they are tests. For the two valid_move() methods, I make sure that the number of valid moves is greater than 0 which should always be true. For the map.move function, I call move on a valid space for the pacman character, and ensure that it returns true.
+
+
 ### Keith Code
 
 
