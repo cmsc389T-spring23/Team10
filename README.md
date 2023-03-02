@@ -1,6 +1,6 @@
 # cmsc389T-spring23
 # Project 2: PacMan
-Team Members: Brian Lau, Keith Lee, Keshav Ganapathy, Jason Werneth
+## Team Members: Brian Lau, Keith Lee, Keshav Ganapathy, Jason Werneth
 
 ![alt text](https://github.com/cmsc389T-spring23/Team10/blob/main/Projects/P2/documentation/PacMan%20Game%20Over.png?raw=true)
 
