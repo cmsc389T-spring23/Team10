@@ -1,14 +1,16 @@
 # cmsc389T-spring23
 # Project 2: PacMan
-Team Members: Brian Lau, Keith Lee, Keshav Ganapathy, Jason Werneth
+## Team Members: Brian Lau, Keith Lee, Keshav Ganapathy, Jason Werneth
 
-![alt text](https://github.com/cmsc389T-spring23/Team10/blob/main/Projects/P2/documentation/PacMan%20Game%20Over.png)
+![alt text](https://github.com/cmsc389T-spring23/Team10/blob/main/Projects/P2/documentation/PacMan%20Game%20Over.png?raw=true)
 
 ### How to Run Code
+Make sure you are within the project directory, then run the following: 
 ```
 gradle build
 gradle run
 ```
+If you do not have gradle installed, feel free to take a look <a href="https://gradle.org/install/">here</a> for installation instructions.
 
 ### Keshav Code
 Functions - pacman.valid_moves(), ghost.valid_moves(), map.move
@@ -21,6 +23,10 @@ We go through all of the potential moves that Ghost can go to. We then check if 
 
 #### <b>Map.move()</b>
 For map.move we make sure first that it is either Pacman or a Ghost, because those are the only two things that can move. From there, we update the references of the previous spot to be empty, and the new spot to be filled. We update the field, locations, and components instance variables.
+
+#### Testing Description
+My tests are not the most robust, but they are tests. For the two valid_move() methods, I make sure that the number of valid moves is greater than 0 which should always be true. For the map.move function, I call move on a valid space for the pacman character, and ensure that it returns true.
+
 
 ### Keith Code
 #### <b>Pacman.consume</b>
