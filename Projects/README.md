@@ -1,1 +1,4 @@
-# Projects
+# Project 2: PacMan
+Team Members: Brian Lau, Keith Lee, Keshav Ganapathy, Jason Werneth
+
+<img src="Team10/Projects/P2/documentation/PacMan Game Over.png"/>
