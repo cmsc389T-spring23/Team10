@@ -5,10 +5,12 @@
 ![alt text](https://github.com/cmsc389T-spring23/Team10/blob/main/Projects/P2/documentation/PacMan%20Game%20Over.png?raw=true)
 
 ### How to Run Code
+Make sure you are within the project directory, then run the following: 
 ```
 gradle build
 gradle run
 ```
+If you do not have gradle feel free to look <a href="https://gradle.org/install/">here</a> for additional installation instructions.
 
 ### Keshav Code
 Functions - pacman.valid_moves(), ghost.valid_moves(), map.move
