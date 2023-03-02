@@ -13,13 +13,13 @@ gradle run
 ### Keshav Code
 Functions - pacman.valid_moves(), ghost.valid_moves(), map.move
 
-#### Pacman.valid_moves()
+#### <b>Pacman.valid_moves()</b>
 We go through all of the potential moves that pacman can go to. We then check if those spaces are not a wall. If it is not a wall then it is added as a potential valid move.
 
-#### Ghost.valid_moves()
+#### <b>Ghost.valid_moves()</b>
 We go through all of the potential moves that Ghost can go to. We then check if those spaces are not a wall. If it is not a wall then it is added as a potential valid move.
 
-#### Map.move()
+#### <b>Map.move()</b>
 For map.move we make sure first that it is either Pacman or a Ghost, because those are the only two things that can move. From there, we update the references of the previous spot to be empty, and the new spot to be filled. We update the field, locations, and components instance variables.
 
 ### Keith Code
