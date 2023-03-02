@@ -65,3 +65,15 @@ Map.attack() test places PacMan and a ghost essentially side by side and checks 
 
 ### Jason Code
 
+#### <b>Pacman.move()</b>
+Moves pacman to one of the valid moves around him, which will at most be one tile away, but can be in any direction. The move that pacman moves in is randomized, but will always be to a valid location and will be adjacent to him. Returns true if the move was successful and false otherwise.
+
+The Pacman.move() test places PacMan on the map at (1,2) then uses get_valid_moves() to get the places where Pacman could move. It then calls move() on pacman and checks each of his previous valid move locations to see if pacman moved to one, and only one of them. The test passes if pacman is found in only one of his valid move locations. Returns true if the move was successful and false otherwise.
+#### <b>Ghost.move()</b>
+Moves a ghost to one of the valid moves around it, which will at most be one tile away, but can be in any direction. The move that the ghost moves in is randomized, but will always be to a valid location and will be adjacent to it.
+
+The Ghost.move() test places a red ghost named "Blinky" on the map at (1,2) then uses get_valid_moves() to get the places where the ghost could move. It then calls move() on the ghost and checks each of its previous valid move locations to see if it moved to one, and only one, of them. The test passes if the ghost is found in only one of its valid move locations.
+#### <b>Map.getLoc()</b>
+Returns an ArrayList of every Type, which could be Type.EMPTY, Type.PACMAN, Type.GHOST, Type.WALL, Type.COOKIE, that is present at the loc parameter.
+
+The Map.getLoc() test adds pacman and a ghost to the map and uses getLoc on locations where there is Type.PACMAN, Type.GHOST, Type.COOKIE, or Type.WALL and testing whether it returns a set that contains Type.PACMAN, Type.GHOST, Type.COOKIE, or Type.WALL, respectively.
