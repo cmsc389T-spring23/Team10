@@ -1,7 +1,6 @@
 # cmsc389T-spring23
-| Person      | PacMan Class | Ghost Class | Map Class | Reviewer Class |
-| ----------- | ----------- | ----------- | ----------- | ----------- |
-| Keshav      | get_valid_moves       | get_valid_moves       | move       | Keith       |
-| Keith   | consume        | attack      | eatCookie       | Jason |
-| Jason      | move       | ghost_move     | getLoc       | Brian |
-| Brian   | is_ghost_in_range        | is_pacman_in_range       | attack       | Keshav       |
+# Project 2: PacMan
+Team Members: Brian Lau, Keith Lee, Keshav Ganapathy, Jason Werneth
+
+<img src="cmsc389T-spring23/Team10/Projects/P2/documentation/PacMan Game Over.png"/>
+
