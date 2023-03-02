@@ -10,7 +10,7 @@ Make sure you are within the project directory, then run the following:
 gradle build
 gradle run
 ```
-If you do not have gradle feel free to look <a href="https://gradle.org/install/">here</a> for additional installation instructions.
+If you do not have gradle installed, feel free to take a look <a href="https://gradle.org/install/">here</a> for installation instructions.
 
 ### Keshav Code
 Functions - pacman.valid_moves(), ghost.valid_moves(), map.move
