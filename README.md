@@ -11,103 +11,16 @@ gradle run
 ```
 
 ### Keshav Code
-```java
+Functions - pacman.valid_moves(), ghost.valid_moves(), map.move
 
+#####Pacman.valid_moves()
+We go through all of the potential moves that pacman can go to. We then check if those spaces are not a wall. If it is not a wall then it is added as a potential valid move.
 
-  public boolean valid_move(Location loc){
-    int x = loc.x;
-    int y = loc.y;
-    HashSet<Map.Type> moves = this.myMap.getLoc(new Location(x,y));
-    if(moves.contains(Map.Type.WALL)) {
-      return false;
-    }
-    return true;
-  }
+#####Ghost.valid_moves()
+We go through all of the potential moves that Ghost can go to. We then check if those spaces are not a wall. If it is not a wall then it is added as a potential valid move.
 
-  public ArrayList<Location> get_valid_moves() {
-    int x = this.myLoc.x;
-    int y = this.myLoc.y;
-    ArrayList<Location> return_val = new ArrayList();
-    return_val.add(new Location(x, y+1));
-    return_val.add(new Location(x+1, y+1));
-    return_val.add(new Location(x-1, y+1));
-    return_val.add(new Location(x+1, y-1));
-    return_val.add(new Location(x-1, y-1));
-    return_val.add(new Location(x, y-1));
-    return_val.add(new Location(x+1, y));
-    return_val.add(new Location(x-1, y));
-    int i = 0;
-    ArrayList<Location> valid_moves = new ArrayList();
-    for (Location move : return_val) {
-        if (valid_move(move)) {
-            valid_moves.add(move);
-        }
-    }
-
-    return valid_moves;
-  }
-
-  public boolean valid_move(Location loc){
-    int x = loc.x;
-    int y = loc.y;
-    HashSet<Map.Type> moves = this.myMap.getLoc(new Location(x,y));
-    if(moves != null && moves.contains(Map.Type.WALL)) {
-      return false;
-    }
-    return true;
-  }
-
-  public ArrayList<Location> get_valid_moves() {
-    int x = this.myLoc.x;
-    int y = this.myLoc.y;
-    ArrayList<Location> return_val = new ArrayList();
-    return_val.add(new Location(x, y+1));
-    return_val.add(new Location(x+1, y+1));
-    return_val.add(new Location(x-1, y+1));
-    return_val.add(new Location(x+1, y-1));
-    return_val.add(new Location(x-1, y-1));
-    return_val.add(new Location(x, y-1));
-    return_val.add(new Location(x+1, y));
-    return_val.add(new Location(x-1, y));
-    int i = 0;
-    ArrayList<Location> valid_moves = new ArrayList();
-    for (Location move : return_val) {
-        if (valid_move(move)) {
-            valid_moves.add(move);
-        }
-    }
-
-    return valid_moves;
-  }
-
-public boolean move(String name, Location loc, Type type) {
-    // Update field locations and jcomponent
-    if (name.equals("pacman")){
-      HashSet<Type>  old = new HashSet<>();
-      old.add(Type.EMPTY);
-      Location old_loc = locations.get(name);
-      HashSet<Type>  new_set = new HashSet<>();
-      new_set.add(Type.PACMAN);
-      locations.put(name, loc);
-      field.put(old_loc, old);
-      field.put(loc, new_set);
-      components.get(name).setLocation(loc.x, loc.y);
-      return true;
-    }else if ((name.equals("Inky") || name.equals("Blinky") || name.equals("Pinky") || name.equals("Clyde"))){
-      HashSet<Type>  old = new HashSet<>();
-      old.add(Type.EMPTY);
-      Location old_loc = locations.get(name);
-      HashSet<Type>  new_set = new HashSet<>();
-      new_set.add(Type.GHOST);
-      locations.put(name, loc);
-      field.put(old_loc, old);
-      field.put(loc, new_set);
-      components.get(name).setLocation(loc.x, loc.y);
-      return true;
-    }
-    return false;
-  }
-```
+#####Map.move()
+For map.move we make sure first that it is either Pacman or a Ghost, because those are the only two things that can move. From there, we update the references of the previous spot to be empty, and the new spot to be filled. We update the field, locations, and components instance variables.
 
 ### Keith Code
 
