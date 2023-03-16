@@ -55,7 +55,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       # Runs a set of commands using the runners shell
-      - name: Test Map
+      - name: Test Map Attack
         run: |
           cd Projects/P2
           ./gradlew build testClasses -x test
@@ -68,7 +68,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       # Runs a set of commands using the runners shell
-      - name: Test Pacman In Range wow
+      - name: Test Pacman Valid Moves
         run: |
           cd Projects/P2
           ./gradlew build testClasses -x test
@@ -82,7 +82,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       # Runs a set of commands using the runners shell
-      - name: Test Ghost In Range wow
+      - name: Test Ghost Valid Moves
         run: |
           cd Projects/P2
           ./gradlew build testClasses -x test
@@ -96,7 +96,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       # Runs a set of commands using the runners shell
-      - name: Test Map
+      - name: Test Map move
         run: |
           cd Projects/P2
           ./gradlew build testClasses -x test
@@ -109,7 +109,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       # Runs a set of commands using the runners shell
-      - name: Test Pacman In Range
+      - name: Test Pacman Consume
         run: |
           cd Projects/P2
           ./gradlew build testClasses -x test
@@ -123,7 +123,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       # Runs a set of commands using the runners shell
-      - name: Test Ghost In Range
+      - name: Test Ghost attack
         run: |
           cd Projects/P2
           ./gradlew build testClasses -x test
@@ -137,7 +137,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       # Runs a set of commands using the runners shell
-      - name: Test Map
+      - name: Test Map eat cookie
         run: |
           cd Projects/P2
           ./gradlew build testClasses -x test
