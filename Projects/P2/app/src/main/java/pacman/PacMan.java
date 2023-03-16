@@ -45,8 +45,8 @@ public class PacMan {
             valid_moves.add(move);
         }
     }
-
-    return valid_moves;
+    // Note
+    return new ArrayList();
   }
 
 
