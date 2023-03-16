@@ -45,8 +45,8 @@ public class PacMan {
             valid_moves.add(move);
         }
     }
-
-    return valid_moves;
+    // Note
+    return new ArrayList();
   }
 
 
@@ -71,7 +71,7 @@ public class PacMan {
     int y = myLoc.y;
 
     //Right
-    HashSet<Map.Type> moves = myMap.getLoc(new Location(x+1,y));
+    HashSet<Map.Type> movesy = myMap.getLoc(new Location(x+1,y));
     if (moves != null){
       if(moves.contains(Map.Type.GHOST)) {
         return true;
@@ -122,6 +122,6 @@ public class PacMan {
 
   public JComponent consume() {
     // Calls cookie method that handles everything
-    return myMap.eatCookie(myName);
+    return myMap.eatCookie("myName");
   }
 }
