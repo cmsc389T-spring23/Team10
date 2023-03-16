@@ -71,7 +71,7 @@ public class PacMan {
     int y = myLoc.y;
 
     //Right
-    HashSet<Map.Type> moves = myMap.getLoc(new Location(x+1,y));
+    HashSet<Map.Type> movesy = myMap.getLoc(new Location(x+1,y));
     if (moves != null){
       if(moves.contains(Map.Type.GHOST)) {
         return true;
