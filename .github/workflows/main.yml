@@ -31,6 +31,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Test Pacman
         run: |
+          cd Projects/P2
           ./gradlew build testClasses -x test
           ./gradlew test --tests TestPacManConsume
           ./gradlew test --tests TestPacManInRange
@@ -46,6 +47,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Test Ghost
         run: |
+          cd Projects/P2
           ./gradlew build testClasses -x test
           ./gradlew test --tests TestGhostAttack
           ./gradlew test --tests TestGhostInRange
@@ -61,6 +63,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Test Map
         run: |
+          cd Projects/P2
           ./gradlew build testClasses -x test
           ./gradlew test --tests TestMapAttack
           ./gradlew test --tests TestMapEatCookie
