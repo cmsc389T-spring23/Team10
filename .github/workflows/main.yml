@@ -20,7 +20,6 @@ jobs:
         run: 
           cd Projects/P2
           ./gradlew build testClasses -x test
-
   pacman_in_range:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -73,7 +72,6 @@ jobs:
           cd Projects/P2
           ./gradlew build testClasses -x test
           ./gradlew test --tests TestPacManValidMoves
-	  
   ghost_valid_moves:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -86,8 +84,7 @@ jobs:
         run: |
           cd Projects/P2
           ./gradlew build testClasses -x test
-          ./gradlew test --tests TestGhostValidMoves
-		  
+          ./gradlew test --tests TestGhostValidMoves	  
   map_move:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -113,8 +110,7 @@ jobs:
         run: |
           cd Projects/P2
           ./gradlew build testClasses -x test
-          ./gradlew test --tests TestPacManConsume
-		  
+          ./gradlew test --tests TestPacManConsume	  
   Ghost_attack:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -127,8 +123,7 @@ jobs:
         run: |
           cd Projects/P2
           ./gradlew build testClasses -x test
-          ./gradlew test --tests TestGhostAttack
-		  
+          ./gradlew test --tests TestGhostAttack		  
   Map_eatCookie:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -154,8 +149,7 @@ jobs:
         run: |
           cd Projects/P2
           ./gradlew build testClasses -x test
-          ./gradlew test --tests TestPacManMove
-		  
+          ./gradlew test --tests TestPacManMove	  
   Ghost_move:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -168,8 +162,7 @@ jobs:
         run: |
           cd Projects/P2
           ./gradlew build testClasses -x test
-          ./gradlew test --tests TestGhostMove
-		  
+          ./gradlew test --tests TestGhostMove	  
   Map_getLoc:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
