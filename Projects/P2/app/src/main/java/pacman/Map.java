@@ -171,7 +171,8 @@ public class Map {
       components.remove(id);
     }
       
-    return output;
+    // returns output
+    return null;
   }
 }
 
