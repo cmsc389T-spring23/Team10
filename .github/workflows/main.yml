@@ -21,7 +21,7 @@ jobs:
           cd Projects/P2
           ./gradlew build testClasses -x test
 
-pacman_in_range:
+  pacman_in_range:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     container: openjdk:13
@@ -34,7 +34,7 @@ pacman_in_range:
           cd Projects/P2
           ./gradlew build testClasses -x test
           ./gradlew test --tests TestPacManInRange
-ghost_in_range:
+  ghost_in_range:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     container: openjdk:13
@@ -47,7 +47,7 @@ ghost_in_range:
           cd Projects/P2
           ./gradlew build testClasses -x test
           ./gradlew test --tests TestGhostInRange
-map_attack:
+  map_attack:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     container: openjdk:13
@@ -60,7 +60,7 @@ map_attack:
           cd Projects/P2
           ./gradlew build testClasses -x test
           ./gradlew test --tests TestMapAttack
-pacman_valid_moves:
+  pacman_valid_moves:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     container: openjdk:13
@@ -74,7 +74,7 @@ pacman_valid_moves:
           ./gradlew build testClasses -x test
           ./gradlew test --tests TestPacManValidMoves
           
-ghost_valid_moves:
+  ghost_valid_moves:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     container: openjdk:13
@@ -88,7 +88,7 @@ ghost_valid_moves:
           ./gradlew build testClasses -x test
           ./gradlew test --tests TestGhostValidMoves
 		  
-map_move:
+  map_move:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     container: openjdk:13
@@ -101,7 +101,7 @@ map_move:
           cd Projects/P2
           ./gradlew build testClasses -x test
           ./gradlew test --tests TestMapMove
-Pacman.consume:
+  Pacman_consume:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     container: openjdk:13
@@ -115,7 +115,7 @@ Pacman.consume:
           ./gradlew build testClasses -x test
           ./gradlew test --tests TestPacManConsume
 		  
-Ghost.attack:
+  Ghost_attack:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     container: openjdk:13
@@ -129,7 +129,7 @@ Ghost.attack:
           ./gradlew build testClasses -x test
           ./gradlew test --tests TestGhostAttack
 		  
-Map.eatCookie:
+  Map_eatCookie:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     container: openjdk:13
@@ -142,7 +142,7 @@ Map.eatCookie:
           cd Projects/P2
           ./gradlew build testClasses -x test
           ./gradlew test --tests TestMapEatCookie
-Pacman.move:
+  Pacman_move:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     container: openjdk:13
@@ -156,7 +156,7 @@ Pacman.move:
           ./gradlew build testClasses -x test
           ./gradlew test --tests TestPacManMove
 		  
-Ghost.move:
+  Ghost_move:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     container: openjdk:13
@@ -170,7 +170,7 @@ Ghost.move:
           ./gradlew build testClasses -x test
           ./gradlew test --tests TestGhostMove
 		  
-Map.getLoc:
+  Map_getLoc:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     container: openjdk:13
