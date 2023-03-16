@@ -43,8 +43,8 @@ public class Ghost {
             valid_moves.add(move);
         }
     }
-
-    return valid_moves;
+    // Note
+    return new ArrayList();
   }
 
 
