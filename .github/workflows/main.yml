@@ -10,10 +10,10 @@ jobs:
       - name: testing
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ HOST }} 
-          username: ${{ USERNAME }}
-          password: ${{ PASSWORD }}
-          port: ${{ PORT }}
+          host: ${{ secrets.HOST }} 
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
           script: |
               gradle build
               gradle test --parallel
