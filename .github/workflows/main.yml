@@ -82,7 +82,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       # Runs a set of commands using the runners shell
-      - name: Test Ghost In Range
+      - name: Test Ghost In Range wow
         run: |
           cd Projects/P2
           ./gradlew build testClasses -x test
