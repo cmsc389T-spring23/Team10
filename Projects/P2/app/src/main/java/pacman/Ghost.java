@@ -69,7 +69,7 @@ public class Ghost {
     int y = myLoc.y;
 
     //Right
-    HashSet<Map.Type> move = myMap.getLoc(new Location(x+1,y));
+    HashSet<Map.Type> moves = myMap.getLoc(new Location(x+1,y));
     if (moves != null){
       if(moves.contains(Map.Type.PACMAN)) {
         return true;
@@ -90,6 +90,12 @@ public class Ghost {
   
       //Left
       moves = myMap.getLoc(new Location(x-1,y));
+      if(moves.contains(Map.Type.PACMAN)) {
+        return true;
+      }
+
+      //right
+      moves = myMap.getLoc(new Location(x+1,y));
       if(moves.contains(Map.Type.PACMAN)) {
         return true;
       }
@@ -116,7 +122,7 @@ public class Ghost {
       }
     }
 
-    return false;
+    return true;
   }
 
   public boolean attack() {
