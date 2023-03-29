@@ -174,7 +174,7 @@ public class Map {
     }
       
     // returns output
-    return null;
+    return output;
   }
 }
 
