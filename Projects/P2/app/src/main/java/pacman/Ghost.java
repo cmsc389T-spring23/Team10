@@ -61,7 +61,7 @@ public class Ghost {
     myLoc = moves.get(locNum);
     myMap.move(myName, myLoc, Map.Type.GHOST);
 
-    return false;//true;
+    return true;
   }
 
   public boolean is_pacman_in_range() {

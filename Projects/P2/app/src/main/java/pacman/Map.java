@@ -86,7 +86,7 @@ public class Map {
     HashSet<Type> thingsAtLoc = field.get(loc);
     HashSet<Type> result = new HashSet<Type>();
 
-    if (thingsAtLoc != null) { // (changed from == null)
+    if (thingsAtLoc == null) {
       return result;
     }
 
