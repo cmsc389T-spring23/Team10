@@ -104,7 +104,7 @@ public class Map {
   }
 
   public boolean attack(String Name) {
-    Location curre = locations.get(Name);
+    Location curr = locations.get(Name);
     int x = curr.x;
     int y = curr.y;
 
