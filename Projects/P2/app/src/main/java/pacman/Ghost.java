@@ -130,6 +130,6 @@ public class Ghost {
       return myMap.attack(myName);
 
     // Else false
-    else return true;
+    else return false;
   }
 }
