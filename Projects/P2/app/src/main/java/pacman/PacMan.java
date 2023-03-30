@@ -46,7 +46,9 @@ public class PacMan {
         }
     }
     // Note
-    return new ArrayList();
+    // return new ArrayList();
+    return valid_moves;
+    // 
   }
 
 
