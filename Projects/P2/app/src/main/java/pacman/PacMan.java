@@ -46,7 +46,7 @@ public class PacMan {
         }
     }
     // Note
-    return new ArrayList();
+    return valid_moves;
   }
 
 
@@ -63,7 +63,7 @@ public class PacMan {
     myLoc = moves.get(locNum);
     myMap.move(myName, myLoc, Map.Type.PACMAN);
 
-    return false;// true;
+    return true;
   }
 
   public boolean is_ghost_in_range() {
@@ -71,7 +71,7 @@ public class PacMan {
     int y = myLoc.y;
 
     //Right
-    HashSet<Map.Type> movesy = myMap.getLoc(new Location(x+1,y));
+    HashSet<Map.Type> moves = myMap.getLoc(new Location(x+1,y));
     if (moves != null){
       if(moves.contains(Map.Type.GHOST)) {
         return true;
@@ -92,6 +92,11 @@ public class PacMan {
   
       //Left
       moves = myMap.getLoc(new Location(x-1,y));
+      if(moves.contains(Map.Type.GHOST)) {
+        return true;
+      }
+      //RIght
+      moves = myMap.getLoc(new Location(x+1,y));
       if(moves.contains(Map.Type.GHOST)) {
         return true;
       }
@@ -117,11 +122,11 @@ public class PacMan {
         return true;
       }
     }
-    return false;
+    return true;
   }
 
   public JComponent consume() {
     // Calls cookie method that handles everything
-    return myMap.eatCookie("myName");
+    return myMap.eatCookie(this.myName);
   }
 }

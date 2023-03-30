@@ -86,7 +86,7 @@ public class Map {
     HashSet<Type> thingsAtLoc = field.get(loc);
     HashSet<Type> result = new HashSet<Type>();
 
-    if (thingsAtLoc != null) { // (changed from == null)
+    if (thingsAtLoc == null) {
       return result;
     }
 
@@ -104,7 +104,7 @@ public class Map {
   }
 
   public boolean attack(String Name) {
-    Location curre = locations.get(Name);
+    Location curr = locations.get(Name);
     int x = curr.x;
     int y = curr.y;
 
@@ -156,7 +156,7 @@ public class Map {
       return true;
     }
 
-    return false;
+    return true;
   }
 
   public JComponent eatCookie(String name) {
@@ -174,7 +174,7 @@ public class Map {
     }
       
     // returns output
-    return null;
+    return output;
   }
 }
 
