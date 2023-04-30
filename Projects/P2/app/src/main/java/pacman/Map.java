@@ -64,7 +64,8 @@ public class Map {
       field.put(old_loc, old);
       field.put(loc, new_set);
       components.get(name).setLocation(loc.x, loc.y);
-      return true;
+      // Note
+      return false;
     }else if ((name.equals("Inky") || name.equals("Blinky") || name.equals("Pinky") || name.equals("Clyde"))){
       HashSet<Type>  old = new HashSet<>();
       old.add(Type.EMPTY);
@@ -75,7 +76,8 @@ public class Map {
       field.put(old_loc, old);
       field.put(loc, new_set);
       components.get(name).setLocation(loc.x, loc.y);
-      return true;
+      // Note
+      return false;
     }
     return false;
   }
@@ -84,7 +86,7 @@ public class Map {
     HashSet<Type> thingsAtLoc = field.get(loc);
     HashSet<Type> result = new HashSet<Type>();
 
-    if (thingsAtLoc == null) {
+    if (thingsAtLoc != null) { // (changed from == null)
       return result;
     }
 
@@ -102,7 +104,7 @@ public class Map {
   }
 
   public boolean attack(String Name) {
-    Location curr = locations.get(Name);
+    Location curre = locations.get(Name);
     int x = curr.x;
     int y = curr.y;
 
@@ -171,7 +173,8 @@ public class Map {
       components.remove(id);
     }
       
-    return output;
+    // returns output
+    return null;
   }
 }
 

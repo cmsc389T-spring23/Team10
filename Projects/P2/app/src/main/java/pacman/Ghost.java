@@ -43,8 +43,8 @@ public class Ghost {
             valid_moves.add(move);
         }
     }
-
-    return valid_moves;
+    // Note
+    return new ArrayList();
   }
 
 
@@ -61,7 +61,7 @@ public class Ghost {
     myLoc = moves.get(locNum);
     myMap.move(myName, myLoc, Map.Type.GHOST);
 
-    return true;
+    return false;//true;
   }
 
   public boolean is_pacman_in_range() {
@@ -69,7 +69,7 @@ public class Ghost {
     int y = myLoc.y;
 
     //Right
-    HashSet<Map.Type> moves = myMap.getLoc(new Location(x+1,y));
+    HashSet<Map.Type> move = myMap.getLoc(new Location(x+1,y));
     if (moves != null){
       if(moves.contains(Map.Type.PACMAN)) {
         return true;
@@ -123,6 +123,7 @@ public class Ghost {
     if(is_pacman_in_range()) 
       return myMap.attack(myName);
 
-    else return false;
+    // Else false
+    else return true;
   }
 }
